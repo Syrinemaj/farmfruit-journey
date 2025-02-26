@@ -85,7 +85,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2FCE2]/30">
+    <div className="min-h-screen bg-gradient-to-br from-soil-100 to-soil-50">
       <AnimatePresence mode="wait">
         {step === 'farm' && (
           <motion.div

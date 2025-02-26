@@ -26,18 +26,18 @@ const FarmSelection = ({ farms, onSelect }: FarmSelectionProps) => {
         className="space-y-8"
       >
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-semibold text-gray-900">Select Your Farm</h1>
-          <p className="text-gray-600">Choose a farm to view its details and manage crops</p>
+          <h1 className="text-4xl font-semibold text-soil-900">Select Your Farm</h1>
+          <p className="text-soil-700">Choose a farm to view its details and manage crops</p>
         </div>
 
         <div className="relative max-w-md mx-auto">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-soil-400" size={20} />
           <input
             type="text"
             placeholder="Search farms..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
+            className="w-full pl-10 pr-4 py-2 border border-soil-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-soil-500 transition-all bg-white/50 backdrop-blur-sm"
           />
         </div>
 
@@ -50,14 +50,14 @@ const FarmSelection = ({ farms, onSelect }: FarmSelectionProps) => {
               className="cursor-pointer"
               onClick={() => onSelect(farm)}
             >
-              <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="bg-white/70 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-soil-200">
                 <div className="relative h-48">
                   <img
                     src={farm.image}
                     alt={farm.name}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-soil-900/50 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-xl font-semibold">{farm.name}</h3>
                     <p className="text-sm opacity-90">{farm.location}</p>
@@ -65,12 +65,12 @@ const FarmSelection = ({ farms, onSelect }: FarmSelectionProps) => {
                 </div>
                 <div className="p-4 grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <p className="text-sm text-gray-600">Soil Moisture</p>
-                    <p className="text-lg font-semibold text-gray-900">{farm.soilMoisture}%</p>
+                    <p className="text-sm text-soil-600">Soil Moisture</p>
+                    <p className="text-lg font-semibold text-soil-900">{farm.soilMoisture}%</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-sm text-gray-600">Temperature</p>
-                    <p className="text-lg font-semibold text-gray-900">{farm.temperature}°C</p>
+                    <p className="text-sm text-soil-600">Temperature</p>
+                    <p className="text-lg font-semibold text-soil-900">{farm.temperature}°C</p>
                   </div>
                 </div>
               </div>
