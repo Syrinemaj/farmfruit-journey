@@ -3,6 +3,7 @@ import { useState } from 'react';
 import FarmSelection from '@/components/FarmSelection';
 import FruitSelection from '@/components/FruitSelection';
 import FruitDashboard from '@/components/FruitDashboard';
+import Layout from '@/components/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export type Farm = {
@@ -85,54 +86,56 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-soil-100 to-soil-50">
-      <AnimatePresence mode="wait">
-        {step === 'farm' && (
-          <motion.div
-            key="farm"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <FarmSelection farms={farms} onSelect={handleFarmSelect} />
-          </motion.div>
-        )}
-        
-        {step === 'fruit' && selectedFarm && (
-          <motion.div
-            key="fruit"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <FruitSelection 
-              fruits={fruits} 
-              onSelect={handleFruitSelect} 
-              onBack={handleBack}
-              farmName={selectedFarm.name} 
-            />
-          </motion.div>
-        )}
-        
-        {step === 'dashboard' && selectedFarm && selectedFruit && (
-          <motion.div
-            key="dashboard"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-          >
-            <FruitDashboard 
-              farm={selectedFarm} 
-              fruit={selectedFruit} 
-              onBack={handleBack} 
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-soil-100 to-soil-50">
+        <AnimatePresence mode="wait">
+          {step === 'farm' && (
+            <motion.div
+              key="farm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FarmSelection farms={farms} onSelect={handleFarmSelect} />
+            </motion.div>
+          )}
+          
+          {step === 'fruit' && selectedFarm && (
+            <motion.div
+              key="fruit"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FruitSelection 
+                fruits={fruits} 
+                onSelect={handleFruitSelect} 
+                onBack={handleBack}
+                farmName={selectedFarm.name} 
+              />
+            </motion.div>
+          )}
+          
+          {step === 'dashboard' && selectedFarm && selectedFruit && (
+            <motion.div
+              key="dashboard"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FruitDashboard 
+                farm={selectedFarm} 
+                fruit={selectedFruit} 
+                onBack={handleBack} 
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </Layout>
   );
 };
 
