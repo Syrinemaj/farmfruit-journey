@@ -66,19 +66,19 @@ const FruitDashboard = ({ farm, fruit, onBack }: FruitDashboardProps) => {
               <h3 className="text-xl font-semibold text-soil-900">Status Indicators</h3>
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center p-4">
-                  <Leaf className="mx-auto mb-2 text-soil-500" size={24} />
-                  <p className="text-sm text-soil-600">Plant Health</p>
-                  <p className="font-semibold text-soil-700">Good</p>
+                  <Leaf className="mx-auto mb-2 text-green-500" size={24} />
+                  <p className="text-sm text-gray-600">Plant Health</p>
+                  <p className="font-semibold text-green-700">Good</p>
                 </div>
                 <div className="text-center p-4">
-                  <Droplet className="mx-auto mb-2 text-soil-500" size={24} />
-                  <p className="text-sm text-soil-600">Irrigation</p>
-                  <p className="font-semibold text-soil-700">Optimal</p>
+                  <Droplet className="mx-auto mb-2 text-blue-500" size={24} />
+                  <p className="text-sm text-gray-600">Irrigation</p>
+                  <p className="font-semibold text-blue-700">Optimal</p>
                 </div>
                 <div className="text-center p-4">
-                  <AlertTriangle className="mx-auto mb-2 text-soil-500" size={24} />
-                  <p className="text-sm text-soil-600">Diseases</p>
-                  <p className="font-semibold text-soil-700">None</p>
+                  <AlertTriangle className="mx-auto mb-2 text-yellow-500" size={24} />
+                  <p className="text-sm text-gray-600">Diseases</p>
+                  <p className="font-semibold text-yellow-700">None</p>
                 </div>
               </div>
             </div>
@@ -90,19 +90,19 @@ const FruitDashboard = ({ farm, fruit, onBack }: FruitDashboardProps) => {
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={data}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#A3CFC3" />
-                    <XAxis dataKey="name" stroke="#3A685C" />
-                    <YAxis stroke="#3A685C" />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#94A3B8" />
+                    <XAxis dataKey="name" stroke="#475569" />
+                    <YAxis stroke="#475569" />
                     <Tooltip 
                       contentStyle={{
                         backgroundColor: "rgba(255, 255, 255, 0.8)",
-                        borderColor: "#C5E1D9",
+                        borderColor: "#E2E8F0",
                       }}
                     />
                     <Line
                       type="monotone"
                       dataKey="ripeness"
-                      stroke="#5FAB97"
+                      stroke="#2563EB"
                       strokeWidth={2}
                     />
                   </LineChart>
@@ -113,13 +113,13 @@ const FruitDashboard = ({ farm, fruit, onBack }: FruitDashboardProps) => {
             <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-sm border border-soil-200">
               <h3 className="text-xl font-semibold text-soil-900 mb-4">AI Recommendations</h3>
               <div className="space-y-4">
-                <div className="p-4 bg-soil-50/50 rounded-lg border border-soil-200">
-                  <p className="text-soil-800">
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <p className="text-blue-800">
                     Optimal harvest time approaching. Plan harvesting within the next 5-7 days.
                   </p>
                 </div>
-                <div className="p-4 bg-soil-50/50 rounded-lg border border-soil-200">
-                  <p className="text-soil-800">
+                <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
+                  <p className="text-blue-800">
                     Soil moisture levels are optimal. Maintain current irrigation schedule.
                   </p>
                 </div>
